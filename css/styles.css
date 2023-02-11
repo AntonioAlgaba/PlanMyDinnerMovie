@@ -97,6 +97,17 @@ body{
   }
 }
 
+/* testimonials section */
+div.testimonials {
+  
+  padding-bottom: 4rem;
+  padding-right: 3rem;
+}
+
+.mymodalheader{
+  border-style: none;
+}
+
 
 .jumbotron {
     padding: 10px 10px;
@@ -110,6 +121,16 @@ body{
     -ms-transition: all 0.2s ease;
     -o-transition: all 0.2s ease;
   }
+
+  .jumboBtn{
+    font-size: 15px;
+    border-radius: 10px;
+    padding: 5px;
+  }
+
+  .jumboBtn:hover{
+    box-shadow: 5px 5px 18px #333333;
+   }
   .display-4   {
     font-size: 6vw !important;
     font-weight: 500 !important;
@@ -313,6 +334,38 @@ display: none;
   text-decoration: underline;
   text-align: center;
   margin-bottom: 20px;
+}
+
+/* movie style */
+#movies .col-md-3 {
+  margin-top: 20px;
+  
+}
+
+#movies .col-md-3 .myCard{
+ height:  350px;
+ background-color:  rgba(239, 227, 227, 0.43);
+ padding-top: 10px;
+ 
+}
+
+#movies .col-md-3 img{
+  height: 240px;
+}
+
+.movieHeader{
+  text-align: center;
+  color: #dbe4ed;
+}
+
+/*#pills-movie{
+  background-color: rgba(235, 223, 223, 0.549);
+ 
+}*/
+
+#searchBtn{
+  justify-content: center;
+  margin-top: 10px;
 }
 
 

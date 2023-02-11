@@ -13,6 +13,18 @@ jumbotron.css("background-image", "url('images/Banner.png')");
 display4.css("color", "black");
 lead.css("color", "black");
 
+$(".jumboBtn").click(function(){
+    $("#modalTestimonials").modal("show")
+    //$(".testimonials").toggle();
+})
+
+$("#pills-movie-tab").click(function(){
+    $(".jumbotron").css("background-image", "url('images/movie-banner.jpg')");
+       // display4.css("color", "white");
+       // lead.css("color", "white");
+       // jumbotron.css("background-position","center");
+})
+
 //array to hold user input
 var ingredients = [];
 //array to hold all the ingredients name
@@ -38,6 +50,12 @@ function getCocktail(id) {
     getData(baseURL, "Cocktail");
 }
 
+//function to get movies details
+function getMovie(id){
+    let baseURL = `http://www.omdbapi.com/?s=&apikey=2069bafa`;
+    getData(baseURL, "Movie");
+}
+
 //function to call ajax request
 function getData(queryURL, type) {
     $.ajax({
@@ -55,6 +73,9 @@ function getData(queryURL, type) {
         if(type == "Recipe"){
 
             popModal(response);
+        }
+        if(type == "Movie"){
+            showMovies(response);
         }
 
         //testing
@@ -240,6 +261,64 @@ function showMeals(data) {
     }
     
 }
+
+//Click event for movies
+$("#searchBtn").on('click', function(event){
+    event.preventDefault();
+    let searchText = ($('#searchText').val());
+    showMovies(searchText)
+})
+
+//Function to get Movies
+function showMovies(searchText) {
+   console.log(searchText)
+   $.ajax({
+    url: "http://www.omdbapi.com/?s=" + searchText + "&apikey=2069bafa",
+    method: "GET"
+   }).then(function(response){
+      
+       console.log(response)
+       let movies = response.Search;
+    let html = "";
+            $.each(movies, function(index, movie){
+          html += `
+          <div class="col-md-3 ">
+            <div class="myCard text-center">
+            <img src="${movie.Poster}" alt="Image not found">
+             <h5 id="eachTitle">${movie.Title}</h5>
+             <a  onclick="window.open('https://www.imdb.com/title/${movie.imdbID}/')"  class="btn btn-primary" id="movieInfoBtn">Movie Details</a>
+             </div>
+          </div>
+          `;
+       console.log(movie.imdbID);
+        })  
+        
+        
+        $('#movies').prepend(html);
+        
+   });
+}
+ function imdb(){
+    $("#movieInfoBtn").attr("href", "")
+ }
+   /* 
+    $("#movieInfoBtn").click(function(event) {
+        event.preventDefault()
+       $("#movieInfoBtn").attr("href", "https://imdb.com/title${movie.imdbID}/")
+      
+    })*/
+  
+
+
+
+
+//Click event to clear movies
+
+$("#clearBtn").on('click', function(e){
+    e.preventDefault()
+    $('#movies').empty();
+})
+
 //function to change page style
 function changeStyle(page){
     var tabContent = $('.tab-content');
@@ -249,7 +328,8 @@ function changeStyle(page){
     }
     if(page == 'meals'){
         tabContent.css("background-image", "linear-gradient(to bottom, white, white 95%)");
-    }
+    } 
+   
 }
 
 //function to handle clicks
@@ -269,7 +349,7 @@ function clickHandler(button) {
             ingredientsInput.val('');
             getMeals();
             storeIngredients();
-        }
+        } 
     }
     //if meal item clicked
     if (button.data('button') == 'meal') {
@@ -298,9 +378,7 @@ function clickHandler(button) {
 
 }
 
-//testing
-// getMeals();
-// getRecipe('52772');
+
 
 
 //click listener for all buttons
@@ -321,7 +399,7 @@ $('body').on('click', function (event) {
         display4.css("color", "white");
         lead.css("color", "white");
         jumbotron.css("background-position","center");
-    }
+    } 
 });
 
 

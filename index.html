@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plan My Dinner</title>
+    <title>PlanMyDinnerMovie</title>
 
 
     <!-- Bootstrap CSS -->
@@ -31,6 +31,7 @@
         <div class="container">
             <h1 class="display-4">Plan my Dinner</h1> 
            <p class="lead">and gimmie a cocktail!</p> 
+           <button class="jumboBtn"><i class="fa fa-comments"></i></button>
         </div> 
     </div>
     <ul class="nav nav-pills mb-3 nav-justified" id="pills-tab" role="tablist">
@@ -41,6 +42,10 @@
         <li class="nav-item" role="presentation">
             <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
                 type="button" role="tab" aria-controls="pills-profile" data-button="cocktail" aria-selected="false">Give me a Cocktail</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-movie-tab" data-bs-toggle="pill" data-bs-target="#pills-movie"
+                type="button" role="tab" aria-controls="pills-movie" data-button="movie" aria-selected="false">Give me a movie</button>
         </li>
     </ul>
     <div class="tab-content" id="pills-tabContent">
@@ -82,10 +87,41 @@
             </div>
 
         </div>
-        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+        <!--Movie section-->
+        <div class="tab-pane fade" id="pills-movie" role="tabpanel" aria-labelledby="pills-movie-tab">
+            <div class="container">
+                <div class=>
+                    <div class="movieHeader">
+                    <h3 clas="text-center">Search For Any Movie</h3>
+                    <h4>Just enter any word</h4>
+                    </div>
+                    <form class="row align-items-start" id="searchMovie">
+                        <div class="col-8">
+                          <div clas="mb-3">
+                            <input type="text" class="form-control" id="searchText" placeholder="Search Movie">
+                            <button class="btn btn-new w-50 " id="searchBtn">Search</button>
+                          </div>
+                        </div>
+                        <div class="col-4">
+                          <button class="btn btn-new w-50 " id="clearBtn">Clear</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+            
+            <div class="container" style="height: 300px; overflow-y: scroll;">
+                <div id="movies" class="row">
+
+                </div>
+
+            </div>
+        </div>
     </div>
 
-    </div>
+    
+    
+    
     <!-- Modal -->
     <div class="modal fade" id="ViewRecipeModal" tabindex="-1">
         <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
@@ -132,6 +168,68 @@
         </div>
     </div>
 
+    <!-- Modal for testimonials-->
+  <div class="modal" id="modalTestimonials" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header mymodalheader">
+            
+          <button type="button" class="btn-close myBtnClose" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="container testimonials">
+                <h2 class="mb-5">What people are saying...</h2>
+                <div class="row">
+                  <div class="col-lg-4">
+                    <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                      <img class="img-fluid rounded-circle mb-3" src="images/testimonials-1.jpg" alt="">
+                      <h5>Margaret E.</h5>
+                      <p class="font-weight-light mb-0">"This is fantastic! Thanks so much guys!"</p>
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                      <img class="img-fluid rounded-circle mb-3" src="images/testimonials-3.jpg" alt="">
+                      <h5>Sarah W.</h5>
+                      <p class="font-weight-light mb-0">"Thanks so much for making these free resources available to us!"</p>
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                      <img class="img-fluid rounded-circle mb-3" src="images/testimonials-2.jpg" alt="">
+                      <h5>Fred S.</h5>
+                      <p class="font-weight-light mb-0">"Plan my Dinner is amazing."</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <!--Modal for movie information-->
+  <div class="modal fade" id="movieInfo" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Modal title</h4>
+            </div>
+
+            <div class="modal-body">Modal body</div>
+
+            <div class="modal-footer">
+                <!-- Approve Button -->
+                <button class="approve btn btn-primary" type="button">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
     <div class="footer bg-dark p-2" id="footer">
         <div class="col-1"></div>
         <div class="col-2 websiteName">Plan My Dinner</div>
@@ -139,6 +237,7 @@
         <div class="col-2 nameContainer">Ben Cruise</div>
         <div class="col-2 nameContainer">Khyle Flores</div>
         <div class="col-2 nameContainer">Paul Morris</div>
+        <div class="col-2 nameContainer">Antonio Algaba</div>
         <div class="col-1"></div>
     </div>
 
