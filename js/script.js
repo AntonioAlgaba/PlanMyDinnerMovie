@@ -273,7 +273,7 @@ $("#searchBtn").on('click', function(event){
 function showMovies(searchText) {
    console.log(searchText)
    $.ajax({
-    url: "http://www.omdbapi.com/?s=" + searchText + "&apikey=2069bafa",
+    url: "https://www.omdbapi.com/?s=" + searchText + "&apikey=2069bafa",
     method: "GET"
    }).then(function(response){
       
