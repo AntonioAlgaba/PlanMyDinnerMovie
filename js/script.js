@@ -283,10 +283,10 @@ function showMovies(searchText) {
             $.each(movies, function(index, movie){
           html += `
           <div class="col-md-3 ">
-            <div class="myCard text-center">
+            <div class=" text-center">
             <img src="${movie.Poster}" alt="Image not found">
              <h5 id="eachTitle">${movie.Title}</h5>
-             <a  onclick="window.open('https://www.imdb.com/title/${movie.imdbID}/')"  class="btn btn-primary" id="movieInfoBtn">Movie Details</a>
+             <a  onclick="window.open('https://www.imdb.com/title/${movie.imdbID}/')"  class="btn btn-primary" id="movieInfoBtn">IMDB Link</a>
              </div>
           </div>
           `;
@@ -298,15 +298,8 @@ function showMovies(searchText) {
         
    });
 }
- function imdb(){
-    $("#movieInfoBtn").attr("href", "")
- }
-   /* 
-    $("#movieInfoBtn").click(function(event) {
-        event.preventDefault()
-       $("#movieInfoBtn").attr("href", "https://imdb.com/title${movie.imdbID}/")
-      
-    })*/
+
+ 
   
 
 
@@ -320,14 +313,15 @@ $("#clearBtn").on('click', function(e){
 })
 
 //function to change page style
+
 function changeStyle(page){
     var tabContent = $('.tab-content');
     if(page == 'cocktail'){
         tabContent.css("background-image", "linear-gradient(to bottom, rgba(0,0,0,0.9), white 95%)");
         
     }
-    if(page == 'meals'){
-        tabContent.css("background-image", "linear-gradient(to bottom, white, white 95%)");
+    if(page == 'meals' || page == 'movie'){
+        tabContent.css("background-image", "linear-gradient(to bottom, rgba(0,0,0,0.9), white 95%");
     } 
    
 }
