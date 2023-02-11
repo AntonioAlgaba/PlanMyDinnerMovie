@@ -52,7 +52,7 @@ function getCocktail(id) {
 
 //function to get movies details
 function getMovie(id){
-    let baseURL = `http://www.omdbapi.com/?s=&apikey=2069bafa`;
+    let baseURL = `https://www.omdbapi.com/?s=&apikey=2069bafa`;
     getData(baseURL, "Movie");
 }
 
