@@ -50,11 +50,6 @@ function getCocktail(id) {
     getData(baseURL, "Cocktail");
 }
 
-//function to get movies details
-function getMovie(id){
-    let baseURL = `https://www.omdbapi.com/?s=&apikey=2069bafa`;
-    getData(baseURL, "Movie");
-}
 
 //function to call ajax request
 function getData(queryURL, type) {
