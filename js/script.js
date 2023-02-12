@@ -306,9 +306,9 @@ function storageWord (){
         
        
     if(movieSearch == "") return;
-    //var lastSearch = movieSearch.pop()
-    //$("#searchText").val(lastSearch)
-    //showMovies(lastSearch) 
+    var lastSearch = movieSearch.pop();
+    $("#searchText").val(lastSearch)
+    showMovies(lastSearch) 
    
 }
 
@@ -319,7 +319,7 @@ storageWord ()
 $("#clearBtn").on('click', function(e){
     e.preventDefault()
     $('#movies').empty();
-    $("#searchText").val().empty();
+    
 })
 
 
