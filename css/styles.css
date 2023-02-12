@@ -176,7 +176,8 @@ div.testimonials {
 }
 #cocktail-row::-webkit-scrollbar,
 #mealInstructions::-webkit-scrollbar,
-.result::-webkit-scrollbar {
+.result::-webkit-scrollbar
+ {
   width: 5px;
   padding-right: 5px;
   background-color: transparent;
@@ -337,6 +338,25 @@ display: none;
 }
 
 /* movie style */
+
+
+ 
+ #movieDisplay::-webkit-scrollbar {
+  width: 5px;
+  height: 8px;
+  background-color: #aaa; /* or add it to the track */
+}
+
+#movieDisplay::-webkit-scrollbar-thumb {
+  background: #000;
+}
+
+#movieDisplay{
+  height: 300px; 
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
 #movies .col-md-3 {
   margin-top: 20px;
   
@@ -362,11 +382,23 @@ h4{
   color: #dbe4ed;
 }
 
+.eachTitle{
+  margin: 5px;
+}
 #searchBtn{
   justify-content: center;
   margin-top: 10px;
 }
 
+.myCardMovie{
+  background-color: #b7aeae;
+  margin: 1rem;;
+  padding: 1rem 0;
+  
+}
+/*.myBtn{
+  margin: 5px;
+}*/
 
 /* To set icon at the right side of the div*/
 .x-icon {

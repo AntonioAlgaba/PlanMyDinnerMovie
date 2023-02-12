@@ -257,11 +257,16 @@ function showMeals(data) {
     
 }
 
+//Movie section
+
+var movieArr = []
+
 //Click event for movies
 $("#searchBtn").on('click', function(event){
-    event.preventDefault();
     let searchText = ($('#searchText').val());
-    showMovies(searchText)
+    movieArr.push(searchText.toLowerCase())
+    console.log(movieArr)
+    showMovies(searchText)        
 })
 
 //Function to get Movies
@@ -272,40 +277,51 @@ function showMovies(searchText) {
     method: "GET"
    }).then(function(response){
       
-       console.log(response)
-       let movies = response.Search;
+    let movies = response.Search;
     let html = "";
             $.each(movies, function(index, movie){
           html += `
-          <div class="col-md-3 ">
+          <div class="myCardMovie col-md-3 ">
+          <div>
             <div class=" text-center">
             <img src="${movie.Poster}" alt="Image not found">
-             <h5 id="eachTitle">${movie.Title}</h5>
+             <h5 class="eachTitle">${movie.Title}</h5>
              <a  onclick="window.open('https://www.imdb.com/title/${movie.imdbID}/')"  class="btn btn-primary" id="movieInfoBtn">IMDB Link</a>
              </div>
           </div>
+          </div>
           `;
-       console.log(movie.imdbID);
+       ;
         })  
-        
-        
+       
+        localStorage.setItem("movieSearch", JSON.stringify(movieArr)) 
         $('#movies').prepend(html);
-        
-   });
+         
+  });
 }
 
- 
-  
+//function to retrieve storage search
+function storageWord (){
+    var movieSearch = JSON.parse(localStorage.getItem("movieSearch"));
+        
+       
+    if(movieSearch == "") return;
+    var lastSearch = movieSearch.pop()
+    $("#searchText").val(lastSearch)
+    showMovies(lastSearch) 
+   
+}
 
-
-
+storageWord ()
 
 //Click event to clear movies
 
 $("#clearBtn").on('click', function(e){
     e.preventDefault()
     $('#movies').empty();
+    $("#searchText").val().empty();
 })
+
 
 //function to change page style
 
