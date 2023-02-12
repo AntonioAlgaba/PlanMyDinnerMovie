@@ -306,7 +306,7 @@ function storageWord (){
         
        
     if(movieSearch == "") return;
-    var lastSearch = movieSearch.pop();
+    var lastSearch = movieArr.pop();
     $("#searchText").val(lastSearch)
     showMovies(lastSearch) 
    
