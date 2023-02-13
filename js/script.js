@@ -306,7 +306,7 @@ function storageWord (){
     var movieSearch = JSON.parse(localStorage.getItem("movieSearch"));
         
        
-    if(movieSearch == "") return;
+    if(movieSearch === null) return;
     var lastSearch = movieSearch[movieSearch.length - 1];
     
     showMovies(lastSearch) 
