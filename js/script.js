@@ -266,7 +266,8 @@ $("#searchBtn").on('click', function(event){
     let searchText = ($('#searchText').val());
     movieArr.push(searchText.toLowerCase())
     console.log(movieArr)
-    showMovies(searchText)        
+    showMovies(searchText)  
+    localStorage.setItem("movieSearch", JSON.stringify(movieArr))      
 })
 
 //Function to get Movies
@@ -294,7 +295,7 @@ function showMovies(searchText) {
        ;
         })  
        
-        localStorage.setItem("movieSearch", JSON.stringify(movieArr)) 
+         
         $('#movies').prepend(html);
          
   });
@@ -306,7 +307,7 @@ function storageWord (){
         
        
     if(movieSearch == "") return;
-    var lastSearch = movieSearch.pop();
+    var lastSearch = movieSearch[movieSearch.length - 1];
     
     showMovies(lastSearch) 
    
