@@ -13,7 +13,9 @@ HTML | Javascript | JQuery | AJAX |  CSS | Bootstrap | JQuery UI | MomentJS | Go
 APIs:
 
 Meals & recipe: https://www.themealdb.com
+
 Cocktails: https://www.thecocktaildb.com
+
 Movies: https://www.omdbapi.com
 
 ## Installation
@@ -26,7 +28,7 @@ Clone the code into your terminal from the repository.
 
 ![Plan My Dinner Give me a cocktail screenshot](https://github.com/Bcruise/PlanMyDinner/blob/main/images/PlanMyDinner.png)
 
-
+![Plan My Dinner Give me a moviescreenshot](images
 
 ## Link
 
