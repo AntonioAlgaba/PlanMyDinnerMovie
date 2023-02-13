@@ -28,8 +28,8 @@ Clone the code into your terminal from the repository.
 
 ![Plan My Dinner Give me a cocktail screenshot](https://github.com/Bcruise/PlanMyDinner/blob/main/images/PlanMyDinner.png)
 
-![Plan My Dinner Give me a moviescreenshot](images
+![Plan My Dinner Give me a moviescreenshot](images/movie-screen-shot.jpg)
 
 ## Link
 
-Follow the following link for the GitHub Pages page - https://Bcruise.github.io/PlanMyDinner/
+Follow the following link for the GitHub Pages page - https://antonioalgaba.github.io/PlanMyDinnerMovie/
